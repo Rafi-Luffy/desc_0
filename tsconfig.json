@@ -1,21 +1,24 @@
+// tsconfig.json (in the root of your project)
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": [],
-  "references": []
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ES2020",
+		"outDir": "out",
+		"lib": [
+			"ES2020"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true,
+        /* Add this line to explicitly specify the types for this project */
+        "types": ["node", "vscode", "mocha"]
+	},
+    "include": [
+        "src"
+    ],
+	"exclude": [
+		"node_modules",
+		".vscode-test",
+        "webview-ui"
+	]
 }
