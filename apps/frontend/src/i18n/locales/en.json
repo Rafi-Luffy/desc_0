@@ -1,0 +1,87 @@
+{
+  "navigation": {
+    "home": "Home",
+    "campaigns": "Campaigns",
+    "impact": "Impact",
+    "transparency": "Transparency",
+    "volunteer": "Volunteer",
+    "about": "About",
+    "contact": "Contact",
+    "donate": "Donate Now"
+  },
+  "home": {
+    "hero": {
+      "title": "Transform Lives Through Transparent Giving",
+      "subtitle": "Join the future of charity donations. Every rupee is tracked on blockchain, every impact is verified, and every story is real.",
+      "startDonating": "Start Donating",
+      "viewTransparency": "View Transparency"
+    },
+    "stats": {
+      "totalDonations": "Total Donations",
+      "livesImpacted": "Lives Impacted",
+      "activeCampaigns": "Active Campaigns",
+      "countriesReached": "Countries Reached"
+    },
+    "featuredCampaigns": {
+      "title": "Featured Campaigns",
+      "subtitle": "Make a difference today. Choose a cause that matters to you."
+    },
+    "features": {
+      "title": "Why Choose CharityFlow?",
+      "subtitle": "Experience the future of charitable giving with complete transparency and trust.",
+      "blockchainTransparency": {
+        "title": "Blockchain Transparency",
+        "description": "Every donation is tracked on blockchain, ensuring complete transparency and accountability."
+      },
+      "instantImpact": {
+        "title": "Instant Impact",
+        "description": "See real-time updates on how your donations are making a difference in people's lives."
+      },
+      "globalCommunity": {
+        "title": "Global Community",
+        "description": "Join millions of donors worldwide who are making a positive impact together."
+      }
+    },
+    "cta": {
+      "title": "Ready to Make a Difference?",
+      "subtitle": "Join thousands of donors who trust CharityFlow for transparent, impactful charitable giving. Start your journey today.",
+      "startDonating": "Start Donating",
+      "becomeVolunteer": "Become a Volunteer"
+    }
+  },
+  "donation": {
+    "form": {
+      "amount": "Donation Amount",
+      "customAmount": "Enter custom amount",
+      "taxBenefit": "Tax Benefit: You can save ₹{amount} in taxes (80G)",
+      "donateAnonymously": "Donate Anonymously",
+      "anonymousDescription": "Your name won't be shown publicly",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "message": "Message (Optional)",
+      "messagePlaceholder": "Share why you're donating or leave a message of support...",
+      "paymentMethod": "Payment Method",
+      "submit": "Donate ₹{amount}",
+      "processing": "Processing...",
+      "security": "Your donation is secured by 256-bit SSL encryption and blockchain technology"
+    },
+    "success": {
+      "title": "Donation Successful!",
+      "message": "Thank you for your donation of ₹{amount}. You will receive a confirmation email shortly."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "share": "Share"
+  }
+}

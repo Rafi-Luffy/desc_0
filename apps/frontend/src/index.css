@@ -1,0 +1,307 @@
+/* The Google Font import MUST be the very first line */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
+
+/* Tailwind directives come after the imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 252 248 243; /* Warm cream */
+    --foreground: 51 51 51; /* Soft charcoal */
+    --card: 255 255 255;
+    --card-foreground: 51 51 51;
+    --popover: 255 255 255;
+    --popover-foreground: 51 51 51;
+    --primary: 41 98 255; /* Warm blue */
+    --primary-foreground: 255 255 255;
+    --secondary: 245 245 220; /* Beige */
+    --secondary-foreground: 51 51 51;
+    --muted: 245 245 220;
+    --muted-foreground: 107 114 128;
+    --accent: 245 245 220;
+    --accent-foreground: 51 51 51;
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 41 98 255;
+    --radius: 0.75rem;
+
+    /* Custom warm colors */
+    --warm-orange: 255 154 0;
+    --soft-green: 52 168 83;
+    --golden: 255 193 7;
+    --terracotta: 205 92 92;
+    --sage: 159 168 139;
+  }
+
+  .dark {
+    --background: 28 25 23; /* Warm dark */
+    --foreground: 250 250 249;
+    --card: 41 37 36;
+    --card-foreground: 250 250 249;
+    --popover: 41 37 36;
+    --popover-foreground: 250 250 249;
+    --primary: 96 165 250;
+    --primary-foreground: 28 25 23;
+    --secondary: 68 64 60;
+    --secondary-foreground: 250 250 249;
+    --muted: 68 64 60;
+    --muted-foreground: 161 161 170;
+    --accent: 68 64 60;
+    --accent-foreground: 250 250 249;
+    --destructive: 127 29 29;
+    --destructive-foreground: 250 250 249;
+    --border: 68 64 60;
+    --input: 68 64 60;
+    --ring: 96 165 250;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+  }
+
+  .handwritten {
+    font-family: 'Kalam', cursive;
+  }
+}
+
+/* Hand-drawn style elements */
+.hand-drawn-border {
+  position: relative;
+}
+
+.hand-drawn-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 154, 0, 0.3) 50%, transparent 70%);
+  border-radius: 12px;
+  z-index: -1;
+  transform: rotate(-0.5deg);
+}
+
+/* Organic shapes and textures */
+.organic-shape {
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  background: linear-gradient(135deg, rgba(255, 154, 0, 0.1), rgba(52, 168, 83, 0.1));
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px, 80px 80px, 120px 120px;
+}
+
+/* Warm animations */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes warm-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 154, 0, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 154, 0, 0.5); }
+}
+
+@keyframes sketch-draw {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.gentle-float {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+.heart-beat {
+  animation: heart-beat 2s ease-in-out infinite;
+}
+
+.warm-glow {
+  animation: warm-glow 3s ease-in-out infinite;
+}
+
+.sketch-line {
+  stroke-dasharray: 1000;
+  animation: sketch-draw 2s ease-in-out forwards;
+}
+
+/* Hand-drawn button styles */
+.btn-handmade {
+  position: relative;
+  background: linear-gradient(135deg, #ff9a00, #ffa726);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: rotate(-0.5deg);
+  box-shadow: 0 4px 15px rgba(255, 154, 0, 0.3);
+}
+
+.btn-handmade:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 154, 0, 0.4);
+}
+
+.btn-handmade::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: 25px;
+  z-index: -1;
+}
+
+/* Imperfect grid */
+.imperfect-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.imperfect-grid > *:nth-child(odd) {
+  transform: rotate(0.5deg);
+}
+
+.imperfect-grid > *:nth-child(even) {
+  transform: rotate(-0.3deg);
+}
+
+/* Warm card styles */
+.warm-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 154, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.warm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff9a00, #34a853, #ff9a00);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Progress bar with hand-drawn feel */
+.progress-handmade {
+  background: rgba(255, 154, 0, 0.2);
+  height: 12px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 154, 0, 0.3);
+}
+
+.progress-handmade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff9a00, #34a853);
+  border-radius: 20px;
+  transition: width 1s ease-out;
+}
+
+/* Typography with human touch */
+.heading-handmade {
+  font-family: 'Kalam', cursive;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+.text-warm {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Indian-inspired decorative elements */
+.mandala-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9a00' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.lotus-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2334a853' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Responsive design with human touch */
+@media (max-width: 768px) {
+  .imperfect-grid > * {
+    transform: none;
+  }
+
+  .btn-handmade {
+    transform: none;
+    width: 100%;
+  }
+}
+
+/* Custom scrollbar with warm colors */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 154, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff9a00, #34a853);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffa726, #43a047);
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .gentle-float,
+  .heart-beat,
+  .warm-glow {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid rgba(255, 154, 0, 0.5);
+  outline-offset: 2px;
+}
