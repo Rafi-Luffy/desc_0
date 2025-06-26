@@ -1,20 +1,37 @@
 {
 	"name": "ai-chat-assistant",
 	"displayName": "AI Chat Assistant",
-	"description": "A smart chat assistant for VS Code.",
-	"version": "0.0.1",
+	"description": "A smart chat assistant for VS Code with code generation, file analysis, and workspace context awareness.",
+	"version": "1.0.0",
+	"publisher": "your-publisher-name",
 	"engines": {
 		"vscode": "^1.85.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Machine Learning",
+		"Snippets"
+	],
+	"keywords": [
+		"ai",
+		"chat",
+		"assistant",
+		"code generation",
+		"gemini",
+		"productivity"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "ai-chat-assistant.setApiKey",
-				"title": "AI Chat: Set Gemini API Key"
+				"title": "AI Chat: Set Gemini API Key",
+				"icon": "$(key)"
+			},
+			{
+				"command": "ai-chat-assistant.generateCode",
+				"title": "AI Chat: Generate Code",
+				"icon": "$(code)"
 			}
 		],
 		"viewsContainers": {
@@ -36,6 +53,25 @@
 					"contextualTitle": "AI Chat Assistant"
 				}
 			]
+		},
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "ai-chat-assistant.setApiKey",
+					"when": "true"
+				},
+				{
+					"command": "ai-chat-assistant.generateCode",
+					"when": "true"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "ai-chat-assistant.generateCode",
+					"group": "1_modification",
+					"when": "editorTextFocus"
+				}
+			]
 		}
 	},
 	"scripts": {
@@ -45,7 +81,9 @@
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
 		"build:webview": "cd webview-ui && npm install && npm run build",
-		"watch:webview": "cd webview-ui && npm run build -- --watch"
+		"watch:webview": "cd webview-ui && npm run build -- --watch",
+		"package": "vsce package",
+		"publish": "vsce publish"
 	},
 	"devDependencies": {
 		"@types/mocha": "^10.0.6",
@@ -58,5 +96,14 @@
 	},
 	"dependencies": {
 		"@google/generative-ai": "^0.24.1"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/your-username/ai-chat-assistant.git"
+	},
+	"bugs": {
+		"url": "https://github.com/your-username/ai-chat-assistant/issues"
+	},
+	"homepage": "https://github.com/your-username/ai-chat-assistant#readme",
+	"license": "MIT"
 }

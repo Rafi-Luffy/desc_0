@@ -1,71 +1,173 @@
-# ai-chat-assistant README
+# 🤖 AI Chat Assistant for VS Code
 
-This is the README for your extension "ai-chat-assistant". After writing up a brief description, we recommend including the following sections.
+A powerful Visual Studio Code extension that integrates an AI-powered chat assistant directly into your development workflow. Built with React and powered by Google's Gemini AI, this extension provides contextual code assistance, file analysis, and intelligent code generation.
 
-## Features
+## ✨ Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### 🎯 **Smart Code Generation**
+- Generate functions, components, and entire files from natural language prompts
+- Context-aware code suggestions based on your current workspace
+- Support for multiple programming languages with syntax highlighting
 
-For example if there is an image subfolder under your extension project workspace:
+### 📁 **File & Image Attachment**
+- Use `@filename` syntax to attach files for analysis
+- Support for both text files and images
+- Intelligent file suggestions with fuzzy matching
 
-\!\[feature X\]\(images/feature-x.png\)
+### 🧠 **Workspace Context Awareness**
+- Understands your project structure and currently open files
+- Analyzes selected code snippets for targeted assistance
+- Maintains context across chat sessions
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### 💻 **Integrated Code Actions**
+- **Copy Code**: One-click copying of generated code
+- **Insert Code**: Direct insertion into your active editor
+- **Create File**: Generate new files with AI-created content
 
-## Requirements
+### 🎨 **Modern UI/UX**
+- Clean, VS Code-themed interface
+- Real-time typing indicators
+- Message timestamps and role indicators
+- Responsive design that works in any panel size
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 🚀 Installation
 
-## Extension Settings
+1. **Install the Extension**
+   - Download the `.vsix` file or install from VS Code Marketplace
+   - Open VS Code and go to Extensions (Ctrl+Shift+X)
+   - Click "Install from VSIX..." if installing locally
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+2. **Get Your Gemini API Key**
+   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create a new API key
+   - Copy the key (starts with `AIzaSy...`)
 
-For example:
+3. **Configure the Extension**
+   - Open Command Palette (Ctrl+Shift+P)
+   - Run "AI Chat: Set Gemini API Key"
+   - Paste your API key when prompted
 
-This extension contributes the following settings:
+## 🎯 Usage
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Basic Chat
+1. Open the AI Chat Assistant panel from the Activity Bar
+2. Type your questions or requests in the chat input
+3. Get intelligent responses with code examples and explanations
 
-## Known Issues
+### File Attachment
+```
+@package.json Can you help me add a new dependency?
+```
+- Type `@` followed by filename
+- Select from the dropdown suggestions
+- The file content will be included in your message
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Code Generation
+```
+Generate a React component for a todo list with TypeScript
+```
+- Ask for specific code in natural language
+- Use the ⚡ button for quick code generation
+- Click action buttons to copy, insert, or create files
 
-## Release Notes
+### Advanced Examples
 
-Users appreciate release notes as you update your extension.
+**Analyze Code:**
+```
+@src/components/Header.tsx Please review this component and suggest improvements
+```
 
-### 1.0.0
+**Generate with Context:**
+```
+Create a utility function to format dates based on the current project structure
+```
 
-Initial release of ...
+**Debug Help:**
+```
+@src/utils/api.ts This function is throwing errors, can you help debug it?
+```
 
-### 1.0.1
+## 🛠️ Development
 
-Fixed issue #.
+### Prerequisites
+- Node.js 18+
+- VS Code 1.85.0+
+- TypeScript 5.3+
 
-### 1.1.0
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/ai-chat-assistant.git
+cd ai-chat-assistant
 
-Added features X, Y, and Z.
+# Install dependencies
+npm install
+
+# Build the webview UI
+cd webview-ui
+npm install
+npm run build
+cd ..
+
+# Compile the extension
+npm run compile
+```
+
+### Running in Development
+1. Open the project in VS Code
+2. Press F5 to launch Extension Development Host
+3. Test your changes in the new VS Code window
+
+### Building for Production
+```bash
+# Build everything
+npm run vscode:prepublish
+
+# Package the extension
+npm run package
+```
+
+## 📋 Commands
+
+| Command | Description | Shortcut |
+|---------|-------------|----------|
+| `AI Chat: Set Gemini API Key` | Configure your Gemini API key | - |
+| `AI Chat: Generate Code` | Quick code generation prompt | - |
+
+## 🔧 Configuration
+
+The extension stores your API key securely using VS Code's Secret Storage API. No configuration files are created, and your key is never exposed in plain text.
+
+### Supported File Types
+- **Code Files**: `.js`, `.ts`, `.jsx`, `.tsx`, `.py`, `.java`, `.cpp`, `.cs`, `.php`, `.rb`, `.go`, `.rs`
+- **Web Files**: `.html`, `.css`, `.scss`, `.json`, `.xml`
+- **Documentation**: `.md`, `.txt`, `.yml`, `.yaml`
+- **Images**: `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🐛 Issues & Support
+
+- **Bug Reports**: [GitHub Issues](https://github.com/your-username/ai-chat-assistant/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/your-username/ai-chat-assistant/discussions)
+- **Documentation**: [Wiki](https://github.com/your-username/ai-chat-assistant/wiki)
+
+## 🙏 Acknowledgments
+
+- Built with [Google Gemini AI](https://ai.google.dev/)
+- UI components inspired by VS Code's design system
+- React integration powered by [Vite](https://vitejs.dev/)
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Made with ❤️ for developers who love AI-assisted coding**
