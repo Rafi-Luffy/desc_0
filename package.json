@@ -75,13 +75,11 @@
 		}
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile && npm run build:webview",
+		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
-		"build:webview": "cd webview-ui && npm install && npm run build",
-		"watch:webview": "cd webview-ui && npm run build -- --watch",
 		"package": "vsce package",
 		"publish": "vsce publish"
 	},
